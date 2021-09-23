@@ -1,0 +1,69 @@
+<div *ngIf="apiResult.error" class="alert alert-danger mt-3" role="alert">
+    <div class="text-center">Login  Failed !  Please  Check  Your  Details and Try again!1</div>
+ </div>
+ <div *ngIf="apiResult.success" class="alert alert-success mt-3" role="alert">
+    <div class="text-center"> Logged in Successfully  !! </div>
+ </div>
+<form [formGroup]="loginForm"  novalidate>
+    <div class="col-md-5 offset-md-4">
+        <div class="form-group">
+            <label for="username" class="form-label mt-4">Username</label>
+            <input type="text"
+             class="form-control" 
+             id="username" 
+             name="username" 
+             placeholder="Enter Username" 
+             formControlName="username"
+             autocomplete="off" 
+             [(ngModel)]="userProfile.username"
+             />
+             <div *ngIf="!username?.valid && username?.dirty " class="text-danger mt-2">
+            
+               <div *ngIf="username.errors?.required">Username is required</div>
+               
+             </div>
+        </div>
+    </div>
+    <div class="col-md-5 offset-md-4">
+        <div class="form-group">
+            <label for="username" class="form-label mt-4">Password</label>
+            <input type="password"
+             class="form-control" 
+             id="password" 
+             name="password" 
+             placeholder="Enter Password" 
+             formControlName="password"
+             autocomplete="off" 
+             [(ngModel)]="userProfile.userpassword"
+             />
+             <div *ngIf="!password?.valid && password?.dirty " class="text-danger mt-2">
+                
+               <div *ngIf="password.errors?.required">Password is required</div>
+               
+             </div>
+             
+        </div>
+    </div>
+
+ <link rel="stylesheet" type="text/css" href="login.component.css">
+
+ <!--<div class="center">
+ <h1 id="captchaHeading">Captcha Validator Using HTML, CSS and JavaScript</h1>
+ <div id="captchaBackground">
+ <canvas id="captcha">captcha text</canvas>
+ <input id="textBox" type="text" name="text">
+ <div id="buttons">
+ <input id="submitButton" type="submit">
+ <button id="refreshButton" type="submit">Refresh</button>
+ </div>
+ <span id="output"></span>
+ </div>
+ </div>-->
+
+
+    <div class="col-md-4 offset-md-6 mt-3">
+        <button class="btn btn-primary" type="submit"
+        (click)="handleLogin()"
+        >Sign in</button>
+    </div>
+</form>

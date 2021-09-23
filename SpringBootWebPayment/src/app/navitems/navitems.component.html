@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<ul class="navbar-nav me-auto mb-4 mb-lg-0">
+  <div style ="position:relative; left:5px; top:-15px;">
+  <h2>Live More, Bank Less!</h2> </div>
+    <li class="nav-item" *ngFor="let item of navitems;let i= index">
+      <div style ="position:relative; left:30px; top:5px;">
+      <font face ="Verdeno" color="red">
+      <a class="nav-link" [routerLink]="item.link">{{item.text}}</a>
+      </font>
+      </div>
+    
+    </li>
+    <div style ="position:relative; left:40px; top:30px;"><h4>Live Fulfilled.</h4></div>
+    
+    <br>
+
+ 
+  </ul>
+  </nav>
